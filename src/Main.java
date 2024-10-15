@@ -86,9 +86,6 @@ public class Main {
             usbDrives[i] = scanner.nextInt();
         }
 
-//        int billigsteTastatur = Electronik.billig(tastaturen);
-//        System.out.println("Billigste Tastatur: " + billigsteTastatur);
-
         int teuresteGegenstand = Electronik.teureste(tastaturen, usbDrives);
         System.out.println("Teuerster Gegenstand: " + teuresteGegenstand);
 
