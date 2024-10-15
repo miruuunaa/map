@@ -16,10 +16,10 @@ public class Main {
             noten[i] = scanner.nextInt();
         }
 
-        System.out.println("Nicht ausreichende Noten: " + BenotungsSystem.nichtAusreichend(noten));
+        System.out.println("Nicht ausreichende Noten(<40): " + BenotungsSystem.nichtAusreichend(noten));
         System.out.println("Durchschnittswert: " + BenotungsSystem.Durchschnitt(noten));
-        System.out.println("Abgerundete Noten: " + Arrays.toString(BenotungsSystem.abgerundedNote(noten)));
-        System.out.println("Maximale abgerundete Note: " + BenotungsSystem.max_abgerunded(noten));
+        System.out.println("Abgerundete Noten: " + Arrays.toString(BenotungsSystem.abgerundetNote(noten)));
+        System.out.println("Maximale abgerundete Note: " + BenotungsSystem.max_abgerundet(noten));
 
         //aufgabe2
         System.out.println("Aufgabe 2");
@@ -33,10 +33,10 @@ public class Main {
             numbers[i] = scanner.nextInt();
         }
 
-        System.out.println("Maximale Zahl: " + Array.findMax(numbers));
-        System.out.println("Minimale Zahl: " + Array.findMin(numbers));
-        System.out.println("Maximale Summe von n-1 Zahlen: " + Array.findMaxSum(numbers));
-        System.out.println("Minimale Summe von n-1 Zahlen: " + Array.findMinSum(numbers));
+        System.out.println("Maximale Zahl: " + Array.findeMax(numbers));
+        System.out.println("Minimale Zahl: " + Array.findeMin(numbers));
+        System.out.println("Maximale Summe von n-1 Zahlen: " + Array.findeMaxSumme(numbers));
+        System.out.println("Minimale Summe von n-1 Zahlen: " + Array.findeMinSumme(numbers));
 
         //aufgabe3
         int[] num1 = new int[9];
@@ -53,7 +53,14 @@ public class Main {
             num2[i] = scanner.nextInt();
         }
 
+        System.out.println("Geben Sie Digit1: ");
+        int digit1= scanner.nextInt();
+        System.out.println("Geben Sie Digit2: ");
+        int digit2= scanner.nextInt();
         System.out.println("Summe: " + Arrays.toString(Zahlen.summe(num1, num2)));
+        System.out.println("Differenz: " + Arrays.toString(Zahlen.differenz(num1, num2)));
+        System.out.println("Multiplikation: " + Arrays.toString(Zahlen.multiplikation(num1,digit1)));
+        System.out.println("Division: " + Arrays.toString(Zahlen.division(num1, digit2)));
 
         //aufgabe4
         System.out.println("Aufgabe 4");
@@ -67,6 +74,9 @@ public class Main {
             tastaturen[i] = scanner.nextInt();
         }
 
+        int billigsteTastatur = Electronik.billig(tastaturen);
+        System.out.println("Billigste Tastatur: " + billigsteTastatur);
+
         System.out.println("Geben Sie die Anzahl der USB-Laufwerke ein:");
         int usbZahl = scanner.nextInt();
         int[] usbDrives = new int[usbZahl];
@@ -76,8 +86,8 @@ public class Main {
             usbDrives[i] = scanner.nextInt();
         }
 
-        int billigsteTastatur = Electronik.billig(tastaturen);
-        System.out.println("Billigste Tastatur: " + billigsteTastatur);
+//        int billigsteTastatur = Electronik.billig(tastaturen);
+//        System.out.println("Billigste Tastatur: " + billigsteTastatur);
 
         int teuresteGegenstand = Electronik.teureste(tastaturen, usbDrives);
         System.out.println("Teuerster Gegenstand: " + teuresteGegenstand);
