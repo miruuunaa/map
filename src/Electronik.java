@@ -1,4 +1,5 @@
 //aufg4
+
 class Electronik {
 
     public static int billig(int[] tastatur) {
