@@ -1,13 +1,14 @@
 //aufg1
+
 import java.util.ArrayList;
 import java.util.List;
 
 class BenotungsSystem {
     public static List<Integer> nichtAusreichend(int[] noten) {
         List<Integer> nichtAusreichend = new ArrayList<>();
-        for (int grade : noten) {
-            if (grade < 40) {
-                nichtAusreichend.add(grade);
+        for (int note : noten) {
+            if (note < 40) {
+                nichtAusreichend.add(note);
             }
         }
         return nichtAusreichend;
@@ -15,19 +16,19 @@ class BenotungsSystem {
 
     public static double Durchschnitt(int[] noten) {
         int sum = 0;
-        for (int grade : noten) {
-            sum += grade;
+        for (int note : noten) {
+            sum += note;
         }
-        double average = (double) sum / noten.length;
-        return Math.round(average * 100.0) / 100.0;
+        double durchschnitt = (double) sum / noten.length;
+        return Math.round(durchschnitt * 100.0) / 100.0;
     }
 
     public static int[] abgerundetNote(int[] noten) {
-        int[] abgerundedNote = new int[noten.length];
+        int[] abgerundetNote = new int[noten.length];
         for (int i = 0; i < noten.length; i++) {
-            abgerundedNote[i] = abgerundet(noten[i]);
+            abgerundetNote[i] = abgerundet(noten[i]);
         }
-        return abgerundedNote;
+        return abgerundetNote;
     }
 
     private static int abgerundet(int note) {
@@ -45,9 +46,9 @@ class BenotungsSystem {
     public static int max_abgerundet(int[] noten) {
         int[] abgerundet_Note = abgerundetNote(noten);
         int maxNote = abgerundet_Note[0];
-        for (int grade : abgerundet_Note) {
-            if (grade > maxNote ) {
-                maxNote  = grade;
+        for (int note : abgerundet_Note) {
+            if (note > maxNote ) {
+                maxNote  = note;
             }
         }
         return maxNote ;
