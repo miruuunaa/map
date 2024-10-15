@@ -1,4 +1,4 @@
-
+//aufg3
 class Zahlen {
 
     public static int[] summe(int[] num1, int[] num2) {
