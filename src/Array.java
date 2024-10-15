@@ -1,6 +1,6 @@
 //aufg2
-class Array {
 
+class Array {
     public static int findeMax(int[] zahlen) {
         int max = zahlen[0];
         for (int zahl : zahlen) {
@@ -24,7 +24,7 @@ class Array {
 
 
     public static int findeMaxSumme(int[] zahlen) {
-        int min = findeMin(zahlen);
+        int min = findeMin(zahlen);//valoarea minima din array
         int sum = 0;
         for (int zahl : zahlen) {
             sum += zahl;
