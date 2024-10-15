@@ -43,29 +43,45 @@ class Zahlen {
         return result;
     }
 
-    public static int[] multiplikation(int[] num, int digit) {
-        int[] result = new int[num.length + 1];
-        int carry = 0;
+public static int[] multiplikation(int[] num, int digit) {
+    boolean negativ = (digit < 0);
+    digit = Math.abs(digit);
 
-        for (int i = num.length - 1; i >= 0; i--) {
-            int product = num[i] * digit + carry;
-            result[i + 1] = product % 10;
-            carry = product / 10;
-        }
+    int[] result = new int[num.length + 1];
+    int carry = 0;
 
-        result[0] = carry;
 
-        if (result[0] == 0) {
-            int[] newResult = new int[result.length - 1];
-            for (int i = 1; i < result.length; i++) {
-                newResult[i - 1] = result[i];
-            }
-            return newResult;
-        } else {
-            return result;
-        }
-
+    for (int i = num.length - 1; i >= 0; i--) {
+        int product = num[i] * digit + carry;
+        result[i + 1] = product % 10;
+        carry = product / 10;
     }
+
+    result[0] = carry;
+
+    if (result[0] > 0) {
+        int[] newResult = new int[result.length + 1];
+        for (int i = 0; i < result.length; i++) {
+            newResult[i + 1] = result[i];
+        }
+        result = newResult;
+    }
+
+    int start = 0;
+    while (start < result.length && result[start] == 0) {
+        start++;
+    }
+
+    int[] finalResult = new int[result.length - start];
+    for (int i = start; i < result.length; i++) {
+            finalResult[i - start] = result[i];
+    }
+    if(negativ&&finalResult.length>0){
+        finalResult[0]=-finalResult[0];
+    }
+    return finalResult;
+
+}
 
     public static int[] division(int[] num, int digit) {
         int[] result = new int[num.length];
