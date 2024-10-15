@@ -1,42 +1,43 @@
+//aufg2
 class Array {
 
-    public static int findMax(int[] numbers) {
-        int max = numbers[0];
-        for (int number : numbers) {
-            if (number > max) {
-                max = number;
+    public static int findeMax(int[] zahlen) {
+        int max = zahlen[0];
+        for (int zahl : zahlen) {
+            if (zahl > max) {
+                max = zahl;
             }
         }
         return max;
     }
 
 
-    public static int findMin(int[] numbers) {
-        int min = numbers[0];
-        for (int number : numbers) {
-            if (number < min) {
-                min = number;
+    public static int findeMin(int[] zahlen) {
+        int min = zahlen[0];
+        for (int zahl : zahlen) {
+            if (zahl < min) {
+                min = zahl;
             }
         }
         return min;
     }
 
 
-    public static int findMaxSum(int[] numbers) {
-        int min = findMin(numbers);
+    public static int findeMaxSumme(int[] zahlen) {
+        int min = findeMin(zahlen);
         int sum = 0;
-        for (int number : numbers) {
-            sum += number;
+        for (int zahl : zahlen) {
+            sum += zahl;
         }
         return sum - min;
     }
 
 
-    public static int findMinSum(int[] numbers) {
-        int max = findMax(numbers);
+    public static int findeMinSumme(int[] zahlen) {
+        int max = findeMax(zahlen);
         int sum = 0;
-        for (int number : numbers) {
-            sum += number;
+        for (int zahl : zahlen) {
+            sum += zahl;
         }
         return sum - max;
     }
